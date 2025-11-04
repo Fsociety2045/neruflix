@@ -77,6 +77,5 @@ And for the HTML All you really need is this:
 tab content for each selector -->
 ```
 
-
 ## Acknowledgments
-scit48.duckdns.org:8888
+scit48.duckdns.org
