@@ -1,5 +1,5 @@
 ## 과제
-### Neruflix 넷플릭스 코리아 클론코딩  netflix.com/kr 
+### Neruflix 넷플릭스 코리아 클론코딩
  <br>
 
 -demo 페이지 배포 완 by github.io & cloudflare pages <br>
@@ -25,10 +25,10 @@ https://neruflix.pages.dev/
 ## 넷플릭스 Clone
 
 - main Page (index.html)
-- Login Page
+- Signin Page
 - Signup Page
 - Profile Page
-- netflix/browse Page
+- browse Page
 
 ## Learning Points
 
