@@ -1,137 +1,296 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Netflix Style Page</title>
-  <link rel="stylesheet" href="./css/main_style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Style Page</title>
+    <link rel="stylesheet" href="./css/main_style.css" />
+    <script src="./js/mainscript.js"></script>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">NETFLIX</div>
-    <nav>
-      <a href="#">홈</a>
-      <a href="#">시리즈</a>
-      <a href="#">영화</a>
-      <a href="#">새로 올라온 콘텐츠</a>
-      <a href="#">내가 찜한 리스트</a>
-    </nav>
-  </header>
+    <header class="navbar">
+        <div class="logo">NETFLIX</div>
+        <nav>
+            <a href="#">홈</a>
+            <a href="#">현재인기</a>
+            <a href="#">새로 올라온 콘텐츠</a>
+            <a href="#">내가 찜한 리스트</a>
+        </nav>
+    </header>
 
-  <main>
-    <!-- 배너 -->
-    <section class="banner">
-      <img src="banner.jpg" alt="배너 이미지">
-      <div class="banner-content">
-        <h1>오늘의 추천 콘텐츠</h1>
-        <p>전 세계 사람들이 주목한 화제의 시리즈를 지금 바로 만나보세요.</p>
-        <button class="play">▶ 재생</button>
-        <button class="info">ℹ️ 상세 정보</button>
-      </div>
-    </section>
+    <main>
+        <section class="banner">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source src="./video/karina.mp4" type="video/mp4">
+            </video>
 
-    <!-- 섹션 1 -->
-    <section class="movie-section">
-      <h2>일본 고등학교 배경 프로그램 ▶</h2>
-      <div class="movie-row">
-        <img src="/img/movie/movie1.jpg" alt="">
-        <img src="/img/movie/movie2.jpg" alt="">
-        <img src="/img/movie/movie3.jpg" alt="">
-        <img src="/img/movie/movie4.jpg" alt="">
-        <img src="/img/movie/movie5.jpg" alt="">
-        <img src="/img/movie/movie6.jpg" alt="">
-        <img src="/img/movie/movie7.jpg" alt="">
-      </div>
-    </section>
+            <div class="banner-content">
+                <h1>오늘의 추천 콘텐츠</h1>
+                <p>전 세계 사람들이 주목한 화제의 시리즈를 지금 바로 만나보세요.</p>
+                <button class="play">▶ 재생</button>
+                <button class="info">ℹ️ 상세 정보</button>
+            </div>
+        </section>
 
-    <!-- 섹션 2 -->
-    <section class="movie-section">
-      <h2>마음에 쏙 드실 거예요</h2>
-      <div class="movie-row">
-        <img src="./img/mv/mv1.jpg" alt="">
-        <img src="./img/mv/mv2.jpg" alt="">
-        <img src="./img/mv/mv3.jpg" alt="">
-        <img src="./img/mv/mv4.jpg" alt="">
-        <img src="./img/mv/mv5.jpg" alt="">
-        <img src="./img/mv/mv6.jpg" alt="">
-        <img src="./img/mv/mv7.jpg" alt="">
-        <img src="./img/mv/mv8.jpg" alt="">
-        <img src="./img/mv/mv1.jpg" alt="">
-        <img src="./img/mv/mv2.jpg" alt="">
-      </div>
-    </section>
+        <section class="top10-section">
+            <h2 class="title">오늘의 TOP 10 콘텐츠</h2>
+            <button class="slide-btn left-btn" data-target="row-top10" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-top10" data-content="›"></button>
 
-    <!-- 섹션 3 -->
-    <section class="movie-section">
-      <h2>Vito ASMR</h2>
-      <div class="movie-row">
-        <img src="./img/vitoasmr/vitoasmr1.jpg" alt="">
-        <img src="./img/vitoasmr/vitoasmr2.jpg" alt="">
-        <img src="./img/vitoasmr/vitoasmr3.jpg" alt="">
-        <img src="./img/vitoasmr/vitoasmr4.jpg" alt="">
-        <img src="./img/vitoasmr/vitoasmr5.jpg" alt="">
-        <img src="./img/vitoasmr/vitoasmr6.jpg" alt="">
-      
-      </div>
-    </section>
+            <div class="top10-list" id="row-top10"> 
+                <div class="item">
+                    <div class="rank">1</div>
+                    <img src="./img/img1.jpg" alt="TOP1"> 
+                </div>
+                <div class="item">
+                    <div class="rank">2</div>
+                    <img src="./img/img2.jpg" alt="TOP2"> 
+                </div>
+                <div class="item">
+                    <div class="rank">3</div>
+                    <img src="./img/img3.jpg" alt="TOP3"> 
+                </div>
+                <div class="item">
+                    <div class="rank">4</div>
+                    <img src="./img/img4.jpg" alt="TOP4"> 
+                </div>
+                <div class="item">
+                    <div class="rank">5</div>
+                    <img src="./img/img5.jpg" alt="TOP5"> 
+                </div>
+                <div class="item">
+                    <div class="rank">6</div>
+                    <img src="./img/img6.jpg" alt="TOP6"> 
+                </div>
+                <div class="item">
+                    <div class="rank">7</div>
+                    <img src="./img/img7.jpg" alt="TOP7"> 
+                </div>
+                <div class="item">
+                    <div class="rank">8</div>
+                    <img src="./img/img8.jpg" alt="TOP8"> 
+                </div>
+                <div class="item">
+                    <div class="rank">9</div>
+                    <img src="./img/img9.jpg" alt="TOP9"> 
+                </div>
+                <div class="item">
+                    <div class="rank">10</div>
+                    <img src="./img/img10.jpg" alt="TOP10"> 
+                </div>
+            </div>
+        </section>
 
-    <!-- 섹션 4 -->
-    <section class="movie-section">
-      <h2>지금 뜨는 인기 시리즈</h2>
-      <div class="movie-row">
-        <img src="pop1.jpg" alt="">
-        <img src="pop2.jpg" alt="">
-        <img src="pop3.jpg" alt="">
-        <img src="pop4.jpg" alt="">
-        <img src="pop5.jpg" alt="">
-        <img src="pop6.jpg" alt="">
-      </div>
-    </section>
 
-    <!-- 섹션 5 -->
-    <section class="movie-section">
-      <h2>액션 & 스릴러 추천</h2>
-      <div class="movie-row">
-        <img src="action1.jpg" alt="">
-        <img src="action2.jpg" alt="">
-        <img src="action3.jpg" alt="">
-        <img src="action4.jpg" alt="">
-        <img src="action5.jpg" alt="">
-        <img src="action6.jpg" alt="">
-      </div>
-    </section>
+        <section class="shorts-row">
+            <h2 class="shorts-title">
+                마음에 쏙 드실 거예요
+            </h2>
+            <button class="slide-btn left-btn" data-target="row-shorts" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-shorts" data-content="›"></button>
 
-    <!-- 섹션 6 -->
-    <section class="movie-section">
-      <h2>감동적인 스토리의 드라마</h2>
-      <div class="movie-row">
-        <img src="drama1.jpg" alt="">
-        <img src="drama2.jpg" alt="">
-        <img src="drama3.jpg" alt="">
-        <img src="drama4.jpg" alt="">
-        <img src="drama5.jpg" alt="">
-        <img src="drama6.jpg" alt="">
-      </div>
-    </section>
+            <div class="shorts-cards" id="row-shorts"> 
+                <div class="short-card">
+                    <img src="./img/shorts/shorts.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts2.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts3.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts4.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts5.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts6.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                                <div class="short-card">
+                    <img src="./img/shorts/shorts7.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts8.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts9.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts10.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts11.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts12.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                                <div class="short-card">
+                    <img src="./img/shorts/shorts13.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts14.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts15.jpg" alt="">
+                    <div class="progress"></div>
+                </div>
 
-    <!-- 섹션 7 -->
-    <section class="movie-section">
-      <h2>넷플릭스 오리지널</h2>
-      <div class="movie-row">
-        <img src="orig1.jpg" alt="">
-        <img src="orig2.jpg" alt="">
-        <img src="orig3.jpg" alt="">
-        <img src="orig4.jpg" alt="">
-        <img src="orig5.jpg" alt="">
-        <img src="orig6.jpg" alt="">
-      </div>
-    </section>
-  </main>
+        </section>
 
-  <footer>
-    <p>© 2025 NETFLIX CLONE - Frontend Demo</p>
-  </footer>
+        <section class="mini-continue-section">
+            <h2 class="mini-title">
+                장지웅 님이 시청 중인 콘텐츠
+                <span class="mini-arrow">›</span>
+            </h2>
+            <button class="slide-btn left-btn" data-target="row-mini" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-mini" data-content="›"></button>
 
-  <script src="script.js"></script>
+            <div class="mini-row" id="row-mini"> 
+                <div class="mini-card">
+                    <img src="./img/pobee/pobee4.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 60%"></div>
+                </div>
+
+                <div class="mini-card">
+                    <img src="./img/vitoasmr/vitoasmr3.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 35%"></div>
+                </div>
+
+                <div class="mini-card">
+                    <img src="./img/shorts/shorts3.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 80%"></div>
+                </div>
+
+                <div class="mini-card">
+                    <img src="./img/boyoung/boyoung2.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 20%"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="movie-section">
+            <h2>Vito ASMR</h2>
+            <button class="slide-btn left-btn" data-target="row-movie1" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie1" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie1"> 
+                <img src="./img/vitoasmr/vitoasmr1.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr2.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr3.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr4.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr5.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr6.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>ASMR POBEE _포비</h2>
+            <button class="slide-btn left-btn" data-target="row-movie2" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie2" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie2"> 
+                <img src="./img/pobee/pobee1.jpg" alt="">
+                <img src="./img/pobee/pobee2.jpg" alt="">
+                <img src="./img/pobee/pobee3.jpg" alt="">
+                <img src="./img/pobee/pobee4.jpg" alt="">
+                <img src="./img/pobee/pobee5.jpg" alt="">
+                <img src="./img/pobee/pobee6.jpg" alt="">
+                <img src="./img/pobee/pobee7.jpg" alt="">
+                <img src="./img/pobee/pobee8.jpg" alt="">
+                <img src="./img/pobee/pobee9.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>ASMR Boyoung 반보영</h2>
+            <button class="slide-btn left-btn" data-target="row-movie3" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie3" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie3"> 
+                <img src="./img/boyoung/boyoung.jpg" alt="">
+                <img src="./img/boyoung/boyoung2.jpg" alt="">
+                <img src="./img/boyoung/boyoung3.jpg" alt="">
+                <img src="./img/boyoung/boyoung4.jpg" alt="">
+                <img src="./img/boyoung/boyoung5.jpg" alt="">
+                <img src="./img/boyoung/boyoung6.jpg" alt="">
+                <img src="./img/boyoung/boyoung7.jpg" alt="">
+                <img src="./img/boyoung/boyoung8.jpg" alt="">
+                <img src="./img/boyoung/boyoung2.jpg" alt="">
+                <img src="./img/boyoung/boyoung3.jpg" alt="">
+                <img src="./img/boyoung/boyoung4.jpg" alt="">
+                <img src="./img/boyoung/boyoung5.jpg" alt="">
+                <img src="./img/boyoung/boyoung6.jpg" alt="">
+                <img src="./img/boyoung/boyoung7.jpg" alt="">
+                <img src="./img/boyoung/boyoung8.jpg" alt="">
+                <img src="./img/boyoung/boyoung2.jpg" alt="">
+                <img src="./img/boyoung/boyoung3.jpg" alt="">
+                <img src="./img/boyoung/boyoung4.jpg" alt="">
+                <img src="./img/boyoung/boyoung5.jpg" alt="">
+                <img src="./img/boyoung/boyoung6.jpg" alt="">
+                <img src="./img/boyoung/boyoung7.jpg" alt="">
+                <img src="./img/boyoung/boyoung8.jpg" alt="">
+                <img src="./img/boyoung/boyoung2.jpg" alt="">
+                <img src="./img/boyoung/boyoung3.jpg" alt="">
+                <img src="./img/boyoung/boyoung4.jpg" alt="">
+                <img src="./img/boyoung/boyoung5.jpg" alt="">
+                <img src="./img/boyoung/boyoung6.jpg" alt="">
+                <img src="./img/boyoung/boyoung7.jpg" alt="">
+                <img src="./img/boyoung/boyoung8.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>benio ASMR</h2>
+            <button class="slide-btn left-btn" data-target="row-movie4" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie4" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie4"> 
+                <img src="./img/bone/beno2.jpg" alt="">
+                <img src="./img/bone/beno3.jpg" alt="">
+                <img src="./img/bone/beno4.jpg" alt="">
+                <img src="./img/bone/beno5.jpg" alt="">
+                <img src="./img/bone/beno6.jpg" alt="">
+                <img src="./img/bone/beno7.jpg" alt="">
+                <img src="./img/bone/beno.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>넷플릭스 오리지널</h2>
+            <button class="slide-btn left-btn" data-target="row-movie5" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie5" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie5"> 
+                <img src="./img/orig1.jpg" alt="">
+                <img src="./img/orig2.jpg" alt="">
+                <img src="./img/orig3.jpg" alt="">
+                <img src="./img/orig4.jpg" alt="">
+                <img src="./img/orig5.jpg" alt="">
+                <img src="./img/orig6.jpg" alt="">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 NETFLIX CLONE - Frontend Demo</p>
+    </footer>
+
 </body>
 </html>

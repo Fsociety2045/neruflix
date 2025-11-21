@@ -1,127 +1,271 @@
-/* 전체 설정 */
+/* ======================================================= */
+/* CSS 스타일 (main_style.css) - 최종 통합 버전 */
+/* ======================================================= */
+
+/* 전체 설정 및 초기화 */
 body {
-  margin: 0;
-  background-color: #141414;
-  color: white;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
+    margin: 0;
+    background-color: #141414;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    font-size: 16px;
 }
 
-/* 상단 네비게이션 */
+/* 네비게이션바 */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 68px;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+@media (min-width: 1200px) {
+    .navbar { padding: 0 60px; }
 }
 
 .logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: red;
+    font-size: 28px;
+    font-weight: bold;
+    color: #e50914;
 }
 
 .navbar nav a {
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 0.95rem;
 }
 
 .navbar nav a:hover {
-  color: #aaa;
+    color: #aaa;
 }
 
-/* 배너 */
+/* ======================================================= */
+/* 🚨 섹션 간 여백 축소 및 배너 크기 조정 */
+/* ======================================================= */
+
+/* 섹션 패딩 및 위치 (상단 여백 축소) */
+.movie-section, 
+.shorts-row, 
+.mini-continue-section, 
+.top10-section {
+    position: relative; 
+    /* 🚨 상단 5px, 좌우 4%, 하단 20px로 여백 대폭 축소 */
+    padding: 5px 4% 20px 4%; 
+    z-index: 10;
+    overflow: visible; 
+}
+
+@media (min-width: 1200px) {
+    .movie-section, .shorts-row, .mini-continue-section, .top10-section {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+/* 배너 (크기 축소) */
 .banner {
-  position: relative;
-  height: 85vh;
-  width: 100%;
+    position: relative;
+    width: 100%;
+    /* 🚨 화면 높이의 80% -> 50%로 축소 */
+    height: 50vh; 
+    overflow: hidden;
 }
 
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(65%);
+.banner-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    z-index: -1;
 }
 
 .banner-content {
-  position: absolute;
-  bottom: 160px;
-  left: 60px;
+    position: absolute;
+    /* 🚨 탑 위치 조정 */
+    top: 60%; 
+    left: 4%;
+    transform: translateY(-60%); 
 }
 
-.banner-content h1 {
-  font-size: 60px;
-  margin-bottom: 10px;
+.banner-content h1 { font-size: 3rem; font-weight: 900; }
+.banner-content p { margin: 20px 0; font-size: 1.2rem; max-width: 500px; }
+.play, .info {
+    padding: 12px 25px; margin-right: 10px; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1rem;
+}
+.play { background: #fff; color: #000; font-weight: bold; }
+.info { background: rgba(109, 109, 110, 0.7); color: white; font-weight: bold; }
+
+/* 제목 스타일 */
+.movie-section h2, .shorts-title, .mini-title, .top10-section .title {
+    margin-top: 15px; 
+    margin-bottom: 10px; /* 제목 아래 여백 축소 */
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.banner-content p {
-  font-size: 18px;
-  max-width: 600px;
-  line-height: 1.4;
+/* 슬라이드 목록 (스크롤 영역) */
+.movie-row, .shorts-cards, .mini-row, .top10-list {
+    display: flex;
+    /* 🚨 이미지 간 여백 축소 */
+    gap: 5px; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    
+    /* 스크롤바 숨기기 */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    /* 🚨 버튼 작동을 위한 필수 설정 */
+    pointer-events: none;
+}
+.movie-row::-webkit-scrollbar, 
+.shorts-cards::-webkit-scrollbar, 
+.mini-row::-webkit-scrollbar, 
+.top10-list::-webkit-scrollbar {
+    display: none;
 }
 
-button {
-  padding: 10px 20px;
-  margin-top: 15px;
-  margin-right: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
+/* 카드 아이템들 (클릭 가능하도록 복구) */
+.movie-row img, .short-card, .mini-card, .item {
+    flex-shrink: 0;
+    transition: transform 0.3s;
+    cursor: pointer;
+    pointer-events: auto; 
 }
 
-.play {
-  background: white;
-  color: black;
+/* 카드 호버 효과 */
+.movie-row img:hover, .mini-card:hover, .item img:hover {
+    transform: scale(1.05);
+    z-index: 20;
 }
 
-.info {
-  background: rgba(109,109,110,0.7);
-  color: white;
+/* 각 카드 사이즈 설정 (브라우저 폭에 비례하여 크기 조정) */
+.movie-row img { 
+    width: 17vw; 
+    height: 9.5vw; 
+    border-radius: 4px; 
+    object-fit: cover; 
+}
+.short-card { 
+    width: 12vw; 
+    height: 21.3vw; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    position: relative; 
+}
+.short-card img { width: 100%; height: 100%; object-fit: cover; }
+.mini-card { 
+    width: 17vw; 
+    height: 9.5vw; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    position: relative; 
+}
+.mini-card img { width: 100%; height: 100%; object-fit: cover; }
+.item { 
+    position: relative; 
+    min-width: 17vw; 
+    height: 25vw; 
+    align-items: flex-end; 
+    display: flex; 
+}
+.rank { 
+    font-size: 8vw; 
+    font-weight: 900; 
+    color: transparent; 
+    -webkit-text-stroke: 4px #595959; 
+    position: absolute; 
+    left: -10px; 
+    bottom: 0; 
+    z-index: -1; 
+}
+.item img { 
+    width: 12vw; 
+    height: 17.6vw; 
+    border-radius: 4px; 
+    object-fit: cover; 
+    margin-left: 40px; 
 }
 
-/* 영화 섹션 */
-.movie-section {
-  padding: 60px 40px 20px;
+/* ======================================================= */
+/* 🚨 슬라이드 버튼 (위치, 디자인, 호버 기능) */
+/* ======================================================= */
+
+.slide-btn {
+    position: absolute;
+    /* 🚨 이미지 행의 시작점에 맞춤 */
+    top: 90px; 
+    /* 🚨 이미지 행 높이에 맞도록 계산 (대략적인 값) */
+    height: calc(100% - 150px); 
+    
+    /* 🚨 버튼 디자인 */
+    width: 50px; 
+    border-radius: 4px; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white; 
+    font-size: 2.5rem; 
+    font-weight: 100; 
+    border: none;
+    cursor: pointer;
+    
+    /* 호버 설정 */
+    opacity: 0; 
+    transition: opacity 0.3s, background-color 0.2s; 
+    
+    z-index: 50; 
+    pointer-events: auto;
 }
 
-.movie-section h2 {
-  margin-bottom: 12px;
-  font-size: 22px;
+/* 버튼 안의 화살표 중앙 정렬 */
+.slide-btn::before {
+    content: attr(data-content); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.movie-row {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
+/* 버튼 위치: 섹션 패딩과 맞춤 */
+.left-btn {
+    left: 0; 
+    padding-left: 4%; 
 }
 
-.movie-row::-webkit-scrollbar {
-  height: 8px;
+.right-btn {
+    right: 0;
+    padding-right: 4%; 
 }
 
-.movie-row::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 4px;
+/* 버튼 호버 시 배경색 변경 효과 */
+.slide-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); 
 }
 
-.movie-row img {
-  width: 230px;
-  border-radius: 6px;
-  transition: transform 0.3s, box-shadow 0.3s;
+/* 마우스를 섹션에 올렸을 때만 버튼이 보이도록 */
+.movie-section:hover .slide-btn,
+.shorts-row:hover .slide-btn,
+.mini-continue-section:hover .slide-btn,
+.top10-section:hover .slide-btn {
+    opacity: 1;
 }
 
-.movie-row img:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+/* 진행바 */
+.mini-progress, .progress {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 3px; background: #e50914;
+    width: 50%;
 }
