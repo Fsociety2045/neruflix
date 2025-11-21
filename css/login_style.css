@@ -35,6 +35,10 @@ body {
     color: #fff;
     font-size: 2rem;
 }
+.form-wrapper h4 {
+    color: #fff;
+    
+}
 .form-wrapper form {
     margin: 25px 0 65px;
 }
@@ -112,6 +116,7 @@ form .form-help {
     justify-content: space-between;
 }
 form .remember-me {
+    margin-top: 10px;
     display: flex;
 }
 form .remember-me input {
@@ -119,6 +124,7 @@ form .remember-me input {
     accent-color: #b3b3b3;
 }
 form .form-help :where(label, a) {
+    margin-top: 6%;
     font-size: 0.9rem;
 }
 .form-wrapper p a {
