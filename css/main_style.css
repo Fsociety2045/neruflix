@@ -4,31 +4,33 @@
 
 /* 전체 설정 및 초기화 */
 body {
-    margin: 0;
-    background-color: #141414;
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    font-size: 16px;
+  margin: 0;
+  background-color: #141414;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  font-size: 16px;
 }
 
 /* 네비게이션바 */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 68px;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 4%;
-    z-index: 1000;
-    transition: background 0.3s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 68px;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+  z-index: 1000;
+  transition: background 0.3s;
 }
 
 @media (min-width: 1200px) {
-    .navbar { padding: 0 60px; }
+  .navbar {
+    padding: 0 60px;
+  }
 }
 
 .logo {
@@ -37,14 +39,14 @@ body {
 }
 
 .navbar nav a {
-    color: #fff;
-    margin-left: 20px;
-    text-decoration: none;
-    font-size: 0.95rem;
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
 .navbar nav a:hover {
-    color: #aaa;
+  color: #aaa;
 }
 
 /* ======================================================= */
@@ -52,42 +54,45 @@ body {
 /* ======================================================= */
 
 /* 섹션 패딩 및 위치 (상단 여백 축소) */
-.movie-section, 
-.shorts-row, 
-.mini-continue-section, 
+.movie-section,
+.shorts-row,
+.mini-continue-section,
 .top10-section {
-    position: relative; 
-    /* 🚨 상단 5px, 좌우 4%, 하단 20px로 여백 대폭 축소 */
-    padding: 5px 4% 20px 4%; 
-    z-index: 10;
-    overflow: visible; 
+  position: relative;
+  /* 🚨 상단 5px, 좌우 4%, 하단 20px로 여백 대폭 축소 */
+  padding: 5px 4% 20px 4%;
+  z-index: 10;
+  overflow: visible;
 }
 
 @media (min-width: 1200px) {
-    .movie-section, .shorts-row, .mini-continue-section, .top10-section {
-        padding-left: 60px;
-        padding-right: 60px;
-    }
+  .movie-section,
+  .shorts-row,
+  .mini-continue-section,
+  .top10-section {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
 
 /* 배너 (크기 축소) */
 .banner {
-    position: relative;
-    width: 100%;
-    /* 🚨 화면 높이의 80% -> 50%로 축소 */
-    height: 50vh; 
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  /* 🚨 화면 높이의 80% -> 50%로 축소 */
+  height: 50vh;
+  overflow: hidden;
 }
 
 .banner-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(70%);
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  z-index: -1;
 }
 
 .banner-content {
@@ -98,10 +103,23 @@ body {
   transform: translateY(-60%);
 }
 
-.banner-content h1 { font-size: 3rem; font-weight: 900; }
-.banner-content p { margin: 20px 0; font-size: 1.2rem; max-width: 500px; }
-.play, .info {
-    padding: 12px 25px; margin-right: 10px; border: none; border-radius: 4px; cursor: pointer; font-size: 1.1rem;
+.banner-content h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.banner-content p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  max-width: 500px;
+}
+.play,
+.info {
+  padding: 12px 25px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 .play {
   background: #fff;
@@ -115,28 +133,34 @@ body {
 }
 
 /* 제목 스타일 */
-.movie-section h2, .shorts-title, .mini-title, .top10-section .title {
-    margin-top: 15px; 
-    margin-bottom: 10px; /* 제목 아래 여백 축소 */
-    font-size: 1.5rem;
-    font-weight: bold;
+.movie-section h2,
+.shorts-title,
+.mini-title,
+.top10-section .title {
+  margin-top: 15px;
+  margin-bottom: 10px; /* 제목 아래 여백 축소 */
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* 슬라이드 목록 (스크롤 영역) */
-.movie-row, .shorts-cards, .mini-row, .top10-list {
-    display: flex;
-    /* 🚨 이미지 간 여백 축소 */
-    gap: 5px; 
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px 0;
-    
-    /* 스크롤바 숨기기 */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    
-    /* 🚨 버튼 작동을 위한 필수 설정 */
-    pointer-events: none;
+.movie-row,
+.shorts-cards,
+.mini-row,
+.top10-list {
+  display: flex;
+  /* 🚨 이미지 간 여백 축소 */
+  gap: 5px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  /* 🚨 버튼 작동을 위한 필수 설정 */
+  pointer-events: none;
 }
 .movie-row::-webkit-scrollbar,
 .shorts-cards::-webkit-scrollbar,
