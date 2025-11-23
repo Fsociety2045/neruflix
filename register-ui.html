@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix</title>
+    <title>Neruflix</title>
     <link rel="stylesheet" href="css/login_style.css" />
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
   </head>
@@ -14,21 +14,17 @@
     <img class="logo" src="img/logo_neruVer.png" alt="netflix logo" />
     <!-- login form -->
     <div class="form-wrapper">
-      <h2>로그인</h2>
-      <h2>아니면 새 계정으로 시작하세요.</h2>
-      <form action="post" class="login-form">
+      <h2>새 계정으로 시작하세요</h2>
+      <form class="login-form">
         <div class="form-control">
           <input type="text" required />
           <label>Email or phone number</label>
         </div>
         <div class="form-control">
-          <input type="password" required />
-          <label>Password</label>
+          <input type="password" placeholder="비밀번호" required />
         </div>
-        <!-- <button type="submit" onclick="location.href='mainindex.html'"> -->
-        <button type="button" onclick="location.href='mainindex.html'">
-          Sign In
-        </button>
+
+        <a href="sign-ui.html" class="btn">동의하고 계속</a>
         <div class="form-help">
           <div class="remember-me">
             <input type="checkbox" id="remember-me" />
@@ -37,12 +33,11 @@
           <a href="#">Need help?</a>
         </div>
       </form>
-      <p>New to Netflix? <a href="signup.html">Sign up now</a></p>
+      <p>Already got Neruflix ID? <a href="signin.html">Sign In </a></p>
       <p>고객지원</p>
       <p>
         This page is protected by Google reCAPTCHA to ensure you're not a bot.
       </p>
-      <small>Learn more. </small>
     </div>
   </body>
 </html>
