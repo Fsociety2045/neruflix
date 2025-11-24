@@ -62,3 +62,70 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // ============================================
+    // 1. 슬라이드 버튼 기능 (기존 코드 유지)
+    // ============================================
+    const slideButtons = document.querySelectorAll('.slide-btn');
+
+    slideButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const row = document.getElementById(targetId);
+
+            if (row) {
+                const scrollAmount = window.innerWidth * 0.8; // 화면의 80%만큼 스크롤
+                
+                if (button.classList.contains('right-btn')) {
+                    row.scrollLeft += scrollAmount;
+                } else if (button.classList.contains('left-btn')) {
+                    row.scrollLeft -= scrollAmount;
+                }
+            }
+        });
+    });
+
+    // ============================================
+    // 2. 넷플릭스 상세 팝업 기능 (새로 추가됨)
+    // ============================================
+    const modalOverlay = document.getElementById('netflix-modal');
+    const modalCloseBtn = document.querySelector('.modal-close');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+
+    // 클릭 이벤트를 걸어줄 모든 콘텐츠 이미지 선택
+    // (movie-row, short-card, mini-card 안에 있는 모든 이미지)
+    const contentImages = document.querySelectorAll('.movie-row img, .short-card img, .mini-card img');
+
+    contentImages.forEach(img => {
+        img.addEventListener('click', () => {
+            // 1. 클릭한 이미지의 정보 가져오기
+            const imgSrc = img.src;
+            const imgTitle = img.alt || '상세 정보'; // alt가 없으면 기본 텍스트
+
+            // 2. 모달에 정보 넣기
+            modalImg.src = imgSrc;
+            modalTitle.textContent = imgTitle;
+
+            // 3. 모달 보여주기
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // 배경 스크롤 막기
+        });
+    });
+
+    // 닫기 버튼 클릭 시
+    modalCloseBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto'; // 스크롤 풀기
+    });
+
+    // 모달 바깥 배경 클릭 시 닫기
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
