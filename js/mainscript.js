@@ -93,6 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCloseBtn = document.querySelector('.modal-close');
     const modalImg = document.getElementById('modal-img');
     const modalTitle = document.getElementById('modal-title');
+    const modalVideoContainer = document.getElementById('modal-video-container');
+    const modalBannerArea = document.querySelector('.modal-banner-area');
 
     // 클릭 이벤트를 걸어줄 모든 콘텐츠 이미지 선택
     // (movie-row, short-card, mini-card 안에 있는 모든 이미지)
@@ -100,6 +102,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contentImages.forEach(img => {
         img.addEventListener('click', () => {
+            // 썸네일 클릭 시에는 이미지 모달을 사용하므로 비디오 상태를 정리
+            if (modalVideoContainer) {
+                modalVideoContainer.classList.remove('active');
+                modalVideoContainer.innerHTML = '';
+            }
+            if (modalBannerArea) {
+                modalBannerArea.classList.remove('hidden');
+            }
+
             // 1. 클릭한 이미지의 정보 가져오기
             const imgSrc = img.src;
             const imgTitle = img.alt || '상세 정보'; // alt가 없으면 기본 텍스트
@@ -118,6 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
     modalCloseBtn.addEventListener('click', () => {
         modalOverlay.classList.remove('active');
         document.body.style.overflow = 'auto'; // 스크롤 풀기
+        if (modalVideoContainer) {
+            modalVideoContainer.classList.remove('active');
+            modalVideoContainer.innerHTML = '';
+        }
+        if (modalBannerArea) {
+            modalBannerArea.classList.remove('hidden');
+        }
     });
 
     // 모달 바깥 배경 클릭 시 닫기
@@ -125,7 +143,35 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modalOverlay) {
             modalOverlay.classList.remove('active');
             document.body.style.overflow = 'auto';
+            if (modalVideoContainer) {
+                modalVideoContainer.classList.remove('active');
+                modalVideoContainer.innerHTML = '';
+            }
+            if (modalBannerArea) {
+                modalBannerArea.classList.remove('hidden');
+            }
         }
     });
-});
 
+    // 배너 재생 버튼을 눌렀을 때 유튜브 영상을 모달로 표시
+    const bannerPlayBtn = document.querySelector('.banner-content .play');
+    const youtubeEmbedUrl = 'https://www.youtube.com/embed/mo1_AyxW-Zk?autoplay=1&si=ySaiy-qsWtnY_5IQ';
+
+    if (bannerPlayBtn) {
+        bannerPlayBtn.addEventListener('click', () => {
+            if (modalOverlay) {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            if (modalVideoContainer) {
+                modalVideoContainer.innerHTML = `<iframe class="modal-iframe" src="${youtubeEmbedUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                modalVideoContainer.classList.add('active');
+            }
+
+            if (modalBannerArea) {
+                modalBannerArea.classList.add('hidden');
+            }
+        });
+    }
+});

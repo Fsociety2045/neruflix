@@ -408,6 +408,10 @@ footer {
   height: 450px;
 }
 
+.modal-banner-area.hidden {
+  display: none;
+}
+
 #modal-img {
   width: 100%;
   height: 100%;
@@ -503,4 +507,21 @@ footer {
   line-height: 1.5;
   color: #fff;
   width: 70%;
+}
+
+.modal-video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  display: none;
+}
+
+.modal-video-container.active {
+  display: block;
+}
+
+.modal-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
