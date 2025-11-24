@@ -3,6 +3,18 @@
   --dark-color: #141414;
 }
 
+@font-face {
+  font-family: "JejuStoneWall";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
+.tingle-accent {
+  font-family: "JejuStoneWall", "Arial", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,13 +33,12 @@ ul {
 }
 
 h1,
-
 h3,
 h4 {
   color: #fff;
 }
 
-h2{
+h2 {
   color: red;
 }
 
@@ -48,7 +59,7 @@ img {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url("../img/background.jpg") no-repeat center center/cover;
+  background: url("../src/img/background.jpg") no-repeat center center/cover;
 }
 
 .showcase::after {
@@ -65,21 +76,21 @@ img {
 
 .showcase-top {
   position: relative;
-  height: 90px;
+  height: 180px;
   z-index: 2;
 }
 
 .showcase-top img {
-  width: 170px;
+  width: 250px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .showcase-top a {
   position: absolute;
-  top: 50%;
+  top: 55%;
   right: 0;
   transform: translate(-50%, -50%);
 }
