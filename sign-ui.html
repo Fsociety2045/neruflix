@@ -1,51 +1,52 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neruflix</title>
-    <link rel="stylesheet" href="css/login_style.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-</head>
+    <link rel="stylesheet" href="css/login_style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  </head>
 
+  <body>
+    <div class="overlay"></div>
+    <img class="logo" src="img/logo_neruVer.png" alt="Neruflix logo" />
 
-<body>
-    <header class="showcase"></header>
-    <div class="overlay" ></div>
-
-    <img class="logo" src="img/" alt="neruflix logo">
-<!-- login form -->
-<div class="form-wrapper">
-    <h2>로그인 </h2>
-    <h4>또는 새 계정으로 시작하세요</h4>
-    <form class="login-form">
+    <div class="form-wrapper">
+      <h2>로그인</h2>
+      <h4>또는 새 계정으로 시작하세요.</h4>
+      <form class="login-form">
         <div class="form-control">
-            <input type="text" required>
-            <label>Email or phone number</label>
+          <input type="text" required />
+          <label>Email or phone number</label>
         </div>
         <div class="form-control">
-            <input type="password" required>
-            <label>Password</label>
+          <input type="password" required />
+          <label>Password</label>
         </div>
-    
 
-        <a href="./pages/profile.html" class="btn">Sign In</a>
-        <div class="form-help"> 
-            <div class="remember-me">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Remember me</label>
-            </div>
-            <a href="#">Need help?</a>
+        <button type="button" onclick="location.href='pages/profile.html'">
+          Sign In
+        </button>
+
+        <div class="form-help">
+          <div class="remember-me">
+            <input type="checkbox" id="remember-me" />
+            <label for="remember-me">Remember me</label>
+          </div>
+          <a href="#">Need help?</a>
         </div>
-    </form>
-    <p>New to Neruflix? <a href="register-ui.html">Sign up now</a></p>
-    <p>고객지원 </p>
-    <p> This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
-    <footer>
-        This is an educational project. 
-        No login information is collected or transmitted.
-    </footer>
-</div>
-</body>
+      </form>
+
+      <p>New to Neruflix? <a href="register-ui.html">Sign up now</a></p>
+      <p>고객지원</p>
+      <p>
+        This page is protected by Google reCAPTCHA to ensure you're not a bot.
+      </p>
+      <footer>
+        This is an educational project. No login information is collected or
+        transmitted.
+      </footer>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Style Page</title>
+    <link rel="stylesheet" href="./css/main_style.css" />
+    <script src="./js/mainscript.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img class="logo" src="img/logo_neruVer.png" alt="netflix logo" />
+        </div>
+        <nav>
+            <a href="index.html">홈</a>
+            <a href="#">현재인기</a>
+            <a href="#">새로 올라온 콘텐츠</a>
+            <a href="#">내가 찜한 리스트</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source src="./video/karina.mp4" type="video/mp4">
+            </video>
+
+            <div class="banner-content">
+                <h1>오늘의 추천 콘텐츠</h1>
+                <p>ASMR로 듣는 '에스파 카리나&윈터가 알고 있는 특이한 서로의 버릇은?' | aespa 카리나&윈터 편</p>
+                <button class="play">▶ 재생</button>
+                <button class="info">ℹ️ 상세 정보</button>
+            </div>
+        </section>
+
+        <section class="shorts-row">
+            <h2 class="shorts-title">
+                마음에 쏙 드실 거예요
+            </h2>
+            <button class="slide-btn left-btn" data-target="row-shorts" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-shorts" data-content="›"></button>
+
+            <div class="shorts-cards" id="row-shorts"> 
+                <div class="short-card">
+                    <img src="./img/shorts/shorts.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts2.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts3.jpg" alt="">
+                   
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts4.jpg" alt="">
+                  
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts5.jpg" alt="">
+                   
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts6.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts7.jpg" alt="">
+                  
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts8.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts9.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts10.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts11.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts12.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts13.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts14.jpg" alt="">
+                    
+                </div>
+                <div class="short-card">
+                    <img src="./img/shorts/shorts15.jpg" alt="">
+                    
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mini-continue-section">
+            <h2 class="mini-title">
+                장지웅 님이 시청 중인 콘텐츠
+                <span class="mini-arrow">›</span>
+            </h2>
+            <button class="slide-btn left-btn" data-target="row-mini" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-mini" data-content="›"></button>
+            <div class="mini-cards" id="row-mini">
+                <div class="mini-card">
+                    <img src="./img/pobee/pobee4.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 60%"></div>
+                </div>
+
+                <div class="mini-card">
+                    <img src="./img/vitoasmr/vitoasmr3.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 35%"></div>
+                </div>
+
+                <div class="mini-card">
+                    <img src="./img/shorts/shorts3.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 80%"></div>
+                </div>
+
+                <div class="mini-card">
+                    <img src="./img/boyoung/boyoung2.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 20%"></div>
+                </div>
+
+                <div class="mini-card">
+                    <img src="./img/bone/beno4.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 50%"></div>
+                </div> 
+                
+                <div class="mini-card">
+                    <img src="./img/ai/AI_3.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 10%"></div>
+
+                </div>
+                <div class="mini-card">
+                    <img src="./img/pet/PET_5.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 75%"></div>
+                </div>
+
+                <div class="mini-card">
+                    <img src="./img/shorts/shorts7.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 45%"></div>
+                </div>
+                <div class="mini-card">
+                    <img src="./img/vitoasmr/vitoasmr10.jpg" alt="">
+                    <div class="mini-progress" style="--progress: 90%"></div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="movie-section">
+            <h2>Vito ASMR</h2>
+            <button class="slide-btn left-btn" data-target="row-movie1" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie1" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie1"> 
+                <img src="./img/vitoasmr/vitoasmr1.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr2.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr3.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr4.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr5.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr6.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr7.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr8.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr9.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr10.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr11.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr12.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr13.jpg" alt="">
+                <img src="./img/vitoasmr/vitoasmr14.jpg" alt="">
+            
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>ASMR POBEE _포비</h2>
+            <button class="slide-btn left-btn" data-target="row-movie2" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie2" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie2"> 
+                <img src="./img/pobee/pobee1.jpg" alt="">
+                <img src="./img/pobee/pobee2.jpg" alt="">
+                <img src="./img/pobee/pobee3.jpg" alt="">
+                <img src="./img/pobee/pobee4.jpg" alt="">
+                <img src="./img/pobee/pobee5.jpg" alt="">
+                <img src="./img/pobee/pobee6.jpg" alt="">
+                <img src="./img/pobee/pobee7.jpg" alt="">
+                <img src="./img/pobee/pobee8.jpg" alt="">
+                <img src="./img/pobee/pobee9.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>ASMR Boyoung 반보영</h2>
+            <button class="slide-btn left-btn" data-target="row-movie3" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie3" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie3"> 
+                <img src="./img/boyoung/boyoung.jpg" alt="">
+                <img src="./img/boyoung/boyoung2.jpg" alt="">
+                <img src="./img/boyoung/boyoung3.jpg" alt="">
+                <img src="./img/boyoung/boyoung4.jpg" alt="">
+                <img src="./img/boyoung/boyoung5.jpg" alt="">
+                <img src="./img/boyoung/boyoung6.jpg" alt="">
+                <img src="./img/boyoung/boyoung7.jpg" alt="">
+                <img src="./img/boyoung/boyoung8.jpg" alt="">
+                <img src="./img/boyoung/boyoung2.jpg" alt="">
+                <img src="./img/boyoung/boyoung3.jpg" alt="">
+                <img src="./img/boyoung/boyoung4.jpg" alt="">
+                <img src="./img/boyoung/boyoung5.jpg" alt="">
+                <img src="./img/boyoung/boyoung6.jpg" alt="">
+                <img src="./img/boyoung/boyoung7.jpg" alt="">
+                <img src="./img/boyoung/boyoung8.jpg" alt="">
+                <img src="./img/boyoung/boyoung2.jpg" alt="">
+                <img src="./img/boyoung/boyoung3.jpg" alt="">
+                <img src="./img/boyoung/boyoung4.jpg" alt="">
+                <img src="./img/boyoung/boyoung5.jpg" alt="">
+                <img src="./img/boyoung/boyoung6.jpg" alt="">
+                <img src="./img/boyoung/boyoung7.jpg" alt="">
+                <img src="./img/boyoung/boyoung8.jpg" alt="">
+                <img src="./img/boyoung/boyoung2.jpg" alt="">
+                <img src="./img/boyoung/boyoung3.jpg" alt="">
+                <img src="./img/boyoung/boyoung4.jpg" alt="">
+                <img src="./img/boyoung/boyoung5.jpg" alt="">
+                <img src="./img/boyoung/boyoung6.jpg" alt="">
+                <img src="./img/boyoung/boyoung7.jpg" alt="">
+                <img src="./img/boyoung/boyoung8.jpg" alt="">
+            </div>
+        </section>
+        
+       
+
+
+        <section class="movie-section">
+            <h2>AI ASMR</h2>
+            <button class="slide-btn left-btn" data-target="row-movie5" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie5" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie5"> 
+                <img src="./img/ai/AI_1.jpg" alt="">
+                <img src="./img/ai/AI_2.jpg" alt="">
+                <img src="./img/ai/AI_3.jpg" alt="">
+                <img src="./img/ai/AI_4.jpg" alt="">
+                <img src="./img/ai/AI_5.jpg" alt="">
+                <img src="./img/ai/AI_6.jpg" alt="">
+                <img src="./img/ai/AI_7.jpg" alt="">
+
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h2>benio ASMR</h2>
+            <button class="slide-btn left-btn" data-target="row-movie4" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie4" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie4"> 
+                <img src="./img/bone/beno2.jpg" alt="">
+                <img src="./img/bone/beno3.jpg" alt="">
+                <img src="./img/bone/beno4.jpg" alt="">
+                <img src="./img/bone/beno5.jpg" alt="">
+                <img src="./img/bone/beno6.jpg" alt="">
+                <img src="./img/bone/beno7.jpg" alt="">
+                <img src="./img/bone/beno.jpg" alt="">
+            </div>
+        </section>
+        
+        <section class="movie-section">
+            <h2>PET ASMR</h2>
+            <button class="slide-btn left-btn" data-target="row-movie6" data-content="‹"></button>
+            <button class="slide-btn right-btn" data-target="row-movie6" data-content="›"></button>
+
+            <div class="movie-row" id="row-movie6"> 
+                <img src="./img/pet/PET_1.jpg" alt="">
+                <img src="./img/pet/PET_2.jpg" alt="">
+                <img src="./img/pet/PET_3.jpg" alt="">
+                <img src="./img/pet/PET_4.jpg" alt="">
+                <img src="./img/pet/PET_5.jpg" alt="">
+                <img src="./img/pet/PET_6.jpg" alt="">
+                <img src="./img/pet/PET_7.jpg" alt="">
+
+            </div>
+            <footer>
+        <p>© 2025 NERUFLIX CLONE </p>
+    </footer>
+
+    <div id="netflix-modal" class="modal-overlay">
+        <div class="modal-window">
+            <button class="modal-close">✕</button>
+            
+            <div class="modal-banner-area">
+                <img id="modal-img" src="" alt="Detail Image">
+                <div class="modal-banner-gradient"></div>
+                <h2 id="modal-title" class="modal-title">제목</h2>
+            </div>
+
+            <div class="modal-content">
+                <div class="modal-controls">
+                    <button class="modal-btn play-btn">▶ 재생</button>
+                    <button class="modal-btn icon-btn">+</button>
+                    <button class="modal-btn icon-btn">👍</button>
+                </div>
+                
+                <div class="modal-details">
+                    <div class="modal-meta">
+                        <span class="match">98% 일치</span>
+                        <span class="year">2025</span>
+                    
+                    </div>
+                    <p class="modal-desc">
+                        이 작품은 ASMR의 정수를 보여줍니다. 팅글이 느껴지는 생생한 사운드와 편안한 시각적 연출로 당신의 밤을 책임집니다. 지금 바로 시청하세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/mainscript.js"></script>
+</body>
+</html>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>© 2025 NERUFLIX CLONE </p>
+    </footer>
+
+</body>
+</html>

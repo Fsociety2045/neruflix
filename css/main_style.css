@@ -1,129 +1,506 @@
-/* 전체 설정 */
+/* ======================================================= */
+/* CSS 스타일 (main_style.css) - 최종 복구 완료 + 미니 진행 바 복구 */
+/* ======================================================= */
+
+/* 1. 전역 및 기본 설정 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   background-color: #141414;
   color: white;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-  padding-top: 60px;  /* 네비게이션 높이만큼 여백 추가 */
 }
 
-/* 상단 네비게이션 */
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 2. 헤더 (Navbar) 스타일 */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  background: rgba(0,0,0,0.8);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
+  padding: 15px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.9);
   z-index: 1000;
 }
 
 .logo {
-  font-size: 28px;
+  /* 로고 이미지 크기 조정 반영 */
+  height: 35px;
+  width: auto;
+
+  color: #e50914;
+  font-size: 24px;
   font-weight: bold;
-  color: red;
+  margin-right: 30px;
 }
 
 .navbar nav a {
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
 .navbar nav a:hover {
-  color: #aaa;
+  opacity: 1;
 }
 
-/* 배너 */
+/* 3. 배너 섹션 스타일 */
 .banner {
+  /* 동영상 배너 복구 반영 */
   position: relative;
-  height: 85vh;
   width: 100%;
+  height: 90vh;
 }
 
-.banner img {
+.banner-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(65%);
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, #141414, transparent);
 }
 
 .banner-content {
   position: absolute;
-  bottom: 160px;
-  left: 60px;
+  bottom: 10%;
+  left: 50px;
+  z-index: 10;
 }
 
 .banner-content h1 {
-  font-size: 60px;
-  margin-bottom: 10px;
+  font-size: 4vw;
+  margin-bottom: 20px;
 }
 
 .banner-content p {
-  font-size: 18px;
-  max-width: 600px;
-  line-height: 1.4;
+  font-size: 1.5vw;
+  width: 60%;
+  margin-bottom: 30px;
 }
 
-button {
-  padding: 10px 20px;
-  margin-top: 15px;
-  margin-right: 10px;
+.banner-content button {
+  padding: 10px 30px;
+  font-size: 1.2vw;
+  font-weight: bold;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
+  margin-right: 15px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.play {
-  background: white;
+.banner-content .play {
+  background-color: white;
   color: black;
 }
 
-.info {
-  background: rgba(109,109,110,0.7);
+.banner-content .play:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.banner-content .info {
+  background-color: rgba(109, 109, 110, 0.7);
   color: white;
 }
 
 /* 영화 섹션 */
 .movie-section {
-  
-  padding-top: 100px; /* 넉넉하게 위로 내리기 */
+  padding: 60px 40px 20px;
 }
 
-.movie-section h2 {
-  margin-bottom: 12px;
-  font-size: 22px;
+.movie-section,
+.shorts-row,
+.top10-section,
+.mini-continue-section {
+  position: relative;
+  margin-bottom: 20px; /* 여백 축소 반영 */
+  padding-left: 50px;
 }
 
+/* TOP 10 섹션은 제거 상태 유지 */
+.top10-section {
+  display: none;
+}
+
+/* 5. 슬라이더 버튼 스타일 (공통) */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% + 5px));
+  width: 50px;
+  height: calc(100% - 70px);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  user-select: none;
+  padding: 0;
+}
+
+.slide-btn[data-content="‹"]::after,
+.slide-btn[data-content="›"]::after {
+  content: attr(data-content);
+}
+
+.slide-btn.left-btn {
+  left: 0;
+}
+
+.slide-btn.right-btn {
+  right: 0;
+}
+
+.movie-section:hover .slide-btn,
+.shorts-row:hover .slide-btn,
+.top10-section:hover .slide-btn,
+.mini-continue-section:hover .slide-btn {
+  opacity: 1;
+}
+
+/* 7. 일반 영화/ASMR 로우 스타일 */
 .movie-row {
   display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
-}
-
-.movie-row::-webkit-scrollbar {
-  height: 8px;
-}
-
-.movie-row::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 4px;
+  overflow-x: scroll;
+  padding-right: 50px;
 }
 
 .movie-row img {
-  width: 230px;
-  border-radius: 6px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  flex-shrink: 0;
+  width: 18%;
+  height: auto;
+  object-fit: cover;
+  margin-right: 5px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
 }
 
 .movie-row img:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.movie-row::-webkit-scrollbar {
+  display: none;
+}
+.movie-row {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 8. 숏츠 카드 섹션 스타일 */
+.shorts-row {
+  margin-top: 20px;
+}
+
+.shorts-cards {
+  display: flex;
+  overflow-x: scroll;
+  padding-right: 50px;
+}
+
+.shorts-cards::-webkit-scrollbar {
+  display: none;
+}
+.shorts-cards {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.short-card {
+  flex-shrink: 0;
+  width: 15%;
+  height: 300px;
+  margin-right: 10px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.short-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #666;
+}
+
+/* 9. 시청 중인 콘텐츠 (Mini Row) 스타일 */
+.mini-title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.mini-arrow {
+  font-size: 1.5vw;
+  margin-left: 10px;
+  color: #e50914;
+}
+
+.mini-row,
+.mini-cards {
+  display: flex;
+  overflow-x: scroll;
+  padding-right: 50px;
+}
+
+.mini-row::-webkit-scrollbar,
+.mini-cards::-webkit-scrollbar {
+  display: none;
+}
+.mini-row,
+.mini-cards {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.mini-card {
+  flex-shrink: 0;
+  width: 20%;
+  margin-right: 5px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mini-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🚨 미니 콘텐츠 진행바 복구 완료 */
+.mini-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #555;
+  /* display: none; 제거됨 */
+}
+
+.mini-progress::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: var(--progress);
+  background-color: #e50914;
+  transition: width 0.3s;
+  /* display: none; 제거됨 */
+}
+
+/* 10. 푸터 스타일 */
+footer {
+  padding: 20px 50px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}
+/* ======================================= */
+/* 넷플릭스 스타일 상세 팝업 (모달) CSS */
+/* ======================================= */
+
+/* 1. 배경 오버레이 (화면 전체 덮기) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은색 */
+  z-index: 9999; /* 최상단 배치 */
+  display: none; /* 기본적으로 숨김 */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  justify-content: center;
+  align-items: center; /* 화면 중앙 정렬 */
+  overflow-y: auto; /* 화면이 작을 때 스크롤 */
+}
+
+/* 팝업 활성화 클래스 */
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* 2. 팝업 창 본체 (가로로 더 길게 수정됨) */
+.modal-window {
+  background-color: #181818;
+
+  /* 🚨 크기 수정: 가로를 600px로 늘림 */
+  width: 600px;
+  max-width: 95%; /* 화면이 작을 때를 대비한 안전장치 */
+
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-window {
+  transform: scale(1);
+}
+
+/* 닫기 버튼 */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #181818;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-close:hover {
+  background: #333;
+}
+
+/* 3. 상단 이미지 영역 */
+.modal-banner-area {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+#modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-banner-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, #181818, transparent);
+}
+
+.modal-title {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* 4. 하단 정보 영역 */
+.modal-content {
+  padding: 20px 40px 40px 40px;
+}
+
+.modal-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-btn {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.play-btn {
+  background: white;
+  color: black;
+  padding: 8px 25px;
+}
+.play-btn:hover {
+  background: #e6e6e6;
+}
+
+.icon-btn {
+  background: rgba(42, 42, 42, 0.6);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-btn:hover {
+  border-color: white;
+}
+
+/* 메타 데이터 */
+.modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.match {
+  color: #46d369;
+}
+.age {
+  border: 1px solid #808080;
+  padding: 0 4px;
+  font-size: 0.8rem;
+}
+.quality {
+  border: 1px solid #808080;
+  padding: 0 4px;
+  font-size: 0.7rem;
+  border-radius: 2px;
+}
+
+.modal-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+  width: 70%;
 }
