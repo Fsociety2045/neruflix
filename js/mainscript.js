@@ -100,24 +100,61 @@ document.addEventListener('DOMContentLoaded', () => {
     // (movie-row, short-card, mini-card 안에 있는 모든 이미지)
     const contentImages = document.querySelectorAll('.movie-row img, .short-card img, .mini-card img');
 
+    const buildYoutubeEmbed = (url) => {
+        if (!url) return null;
+        const embedBase = 'https://www.youtube.com/embed/';
+        try {
+            const ytUrl = new URL(url);
+            let videoId = ytUrl.searchParams.get('v');
+            if (!videoId && ytUrl.hostname.includes('youtu.be')) {
+                videoId = ytUrl.pathname.replace('/', '');
+            }
+            if (!videoId && ytUrl.pathname.includes('/embed/')) {
+                videoId = ytUrl.pathname.split('/').pop();
+            }
+            if (!videoId) return null;
+            return `${embedBase}${videoId}?autoplay=1`;
+        } catch (e) {
+            return null;
+        }
+    };
+
     contentImages.forEach(img => {
         img.addEventListener('click', () => {
-            // 썸네일 클릭 시에는 이미지 모달을 사용하므로 비디오 상태를 정리
-            if (modalVideoContainer) {
-                modalVideoContainer.classList.remove('active');
-                modalVideoContainer.innerHTML = '';
-            }
-            if (modalBannerArea) {
-                modalBannerArea.classList.remove('hidden');
-            }
+            const videoUrl = img.dataset.video;
+            const hasVideo = Boolean(videoUrl);
 
-            // 1. 클릭한 이미지의 정보 가져오기
-            const imgSrc = img.src;
-            const imgTitle = img.alt || '상세 정보'; // alt가 없으면 기본 텍스트
+            if (hasVideo) {
+                const embedUrl = buildYoutubeEmbed(videoUrl);
+                if (embedUrl && modalVideoContainer) {
+                    modalVideoContainer.innerHTML = `<iframe class="modal-iframe" src="${embedUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                    modalVideoContainer.classList.add('active');
+                }
+                if (modalBannerArea) {
+                    modalBannerArea.classList.add('hidden');
+                }
+                if (modalImg) {
+                    modalImg.src = '';
+                }
+                modalTitle.textContent = img.alt || '상세 정보';
+            } else {
+                // 썸네일 클릭 시에는 이미지 모달을 사용하므로 비디오 상태를 정리
+                if (modalVideoContainer) {
+                    modalVideoContainer.classList.remove('active');
+                    modalVideoContainer.innerHTML = '';
+                }
+                if (modalBannerArea) {
+                    modalBannerArea.classList.remove('hidden');
+                }
 
-            // 2. 모달에 정보 넣기
-            modalImg.src = imgSrc;
-            modalTitle.textContent = imgTitle;
+                // 1. 클릭한 이미지의 정보 가져오기
+                const imgSrc = img.src;
+                const imgTitle = img.alt || '상세 정보'; // alt가 없으면 기본 텍스트
+
+                // 2. 모달에 정보 넣기
+                modalImg.src = imgSrc;
+                modalTitle.textContent = imgTitle;
+            }
 
             // 3. 모달 보여주기
             modalOverlay.classList.add('active');
