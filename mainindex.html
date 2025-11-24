@@ -10,6 +10,7 @@
   <header class="navbar">
     <div class="logo">NETFLIX</div>
     <nav>
+      <img src="./img/alarm_logo.png" alt="알람 울리기" id="alarmImage" onclick="toggleAlarmModal()">
       <a href="#">홈</a>
       <a href="#">시리즈</a>
       <a href="#">영화</a>
@@ -131,7 +132,21 @@
   <footer>
     <p>© 2025 NETFLIX CLONE - Frontend Demo</p>
   </footer>
+  
+  <!-- 알람 -->
+  <div id="alarmModal" class="modal-hidden">
+    <div class="modal-content">
+      <span class="close-button" onclick="toggleAlarmModal()">&times;</span>
+      <h1>⏰ 알람 설정</h1>
+      <input type="time" id="alarmTimeInput">
+      <button onclick="setAlarm()">알람 설정</button>
+      <button onclick="clearAlarm()">알람 해제</button>
+      <h3 id="alarmStatus">상태: 알람 대기 중...</h3>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
+  
+  <script src="./js/alarm.js"></script>
+  <!-- <script src="script.js"></script> --> <!--없는js라 주석처리-->>
 </body>
 </html>

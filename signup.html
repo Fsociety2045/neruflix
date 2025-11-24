@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - 회원가입</title>
+    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <img class="logo" src="img/logo.png" alt="netflix logo">
+
+    <div class="form-wrapper">
+        <h2>새 계정 만들기</h2>
+        <form class="login-form">
+            
+            <div class="form-control">
+                <input type="text" required>
+                <label>이름</label>
+            </div>
+
+            <div class="form-control">
+                <input type="text" required>
+                <label>이메일 주소 또는 전화번호</label>
+            </div>
+
+            <div class="form-control">
+                <input type="password" required>
+                <label>비밀번호 (영문, 숫자, 특수문자 포함)</label>
+            </div>
+
+            <div class="form-control">
+                <input type="password" required>
+                <label>비밀번호 확인</label>
+            </div>
+
+            <div class="form-control">
+                <input type="text" required>
+                <label>주소</label>
+            </div>
+
+            <button type="submit" class="btn" style="width:100%; padding:16px 0; background:#e50914; color:#fff; border:none; border-radius:4px; font-size:1rem; font-weight:500; cursor:pointer; margin-top:20px;">가입하기</button>
+
+            <div class="form-help" style="margin-top: 15px;"> 
+                <div class="remember-me">
+                    <input type="checkbox" id="agree-info">
+                    <label for="agree-info">정보수신 동의</label>
+                </div>
+                </div>
+
+        </form>
+        
+        <p style="margin-top: 30px;">이미 계정이 있으신가요? <a href="signin.html">로그인하기</a></p>
+        <p style="font-size: 0.8rem; color: #8c8c8c; margin-top: 10px;">
+            This page is protected by Google reCAPTCHA to ensure you're not a bot.
+        </p>
+    </div>
+</body>
+</html>

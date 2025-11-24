@@ -125,3 +125,75 @@ button {
   transform: scale(1.15);
   box-shadow: 0 0 15px rgba(255,255,255,0.4);
 }
+
+/* --- 알람 팝업(모달) 스타일 --- */
+
+/* 알람 아이콘에 마우스 올리면 클릭 가능하게 커서 변경 */
+#alarmImage {
+  cursor: pointer;
+  width: 45px;  /* 이미지 크기 45px로 설정 */
+  height: 45px;
+  object-fit: cover; /* 이미지가 찌그러지지 않게 */
+  margin-right: 15px;
+}
+
+/* 팝업 배경 (화면 전체를 덮는 어두운 배경) */
+#alarmModal {
+  position: fixed; /* 화면에 고정 */
+  z-index: 1000; /* 다른 요소들보다 위에 표시 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은색 배경 */
+
+  /* 팝업 내용을 중앙 정렬하기 위한 Flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 팝업창이 숨겨져 있을 때의 스타일 */
+.modal-hidden {
+  display: none !important;
+}
+
+/* 팝업창 내용물 (흰색 박스) */
+.modal-content {
+  /* 넷플릭스 테마에 맞게 어두운 배경으로 설정 */
+  background-color: #141414; 
+  color: white;
+  border: 1px solid #333;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative; /* 닫기 버튼을 위한 기준점 */
+}
+
+/* 닫기 버튼 (X) */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: white;
+}
+
+/* 팝업창 내부의 버튼과 입력란 */
+.modal-content input[type="time"] {
+  padding: 5px;
+  margin-right: 10px;
+}
+.modal-content button {
+  padding: 5px 10px;
+}
+.modal-content h3 {
+  margin-top: 20px;
+  color: #aaa;
+}

@@ -1,26 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
 body {
+    /* [수정됨] ../ 를 추가하여 상위 폴더의 img를 찾도록 변경 */
+    background-image: url(../img/background.jpg);
+    
     background-size: cover;
-    background-attachment:fixed;
+    background-attachment: fixed;
+    background-position: center; /* 이미지가 중앙에 오도록 추가 추천 */
+    background-repeat: no-repeat; /* 반복 방지 */
+    
     margin: 0;
     padding: 0;
-    background-image:url(img/background.jpg);
     font-family: 'Roboto', sans-serif;
+    background-color: #000; /* 이미지가 안 뜰 때를 대비한 검은 배경 */
 }
+
 .overlay {
     position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background-color: rgba(0, 0, 0, 0.425); /* black with 50% opacity */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 투명도 조절 */
+    z-index: 1; /* 배경(0)보다는 위에 */
 }
+
 .logo {
     width: 195px;
     top: 15px;
     position: relative;
     left: 15px;
+    z-index: 2; /* 오버레이(1)보다 위에 있어야 밝게 보임 */
 }
+
 .form-wrapper {
     position: absolute;
     left: 50%;
@@ -30,7 +42,11 @@ body {
     width: 312px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, .75);
+    z-index: 2; /* 오버레이(1)보다 위에 있어야 클릭 가능 */
 }
+
+/* --- 아래는 기존 코드 유지 --- */
+
 .form-wrapper h2 {
     color: #fff;
     font-size: 2rem;
