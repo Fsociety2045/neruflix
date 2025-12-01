@@ -6,7 +6,6 @@
 
 ## 팀원 소개
 SCIT 48기 A반
-서동욱님, 강준석님, 김상호님, 장지웅님
 
 ## 프로젝트 소개
 넷플릭스 코리아 클론코딩
@@ -30,26 +29,6 @@ https://neruflix.pages.dev/
 - Profile Page
 - browse Page
 
-## Some cool stuff
-
-Here's a pretty simple, basic way of 
-creating switchable tab content using Vanilla JS:
-
-
-```html
-<!-- Content Pretty Long so I'll add later -->
-<!-- But this is the basic gist -->
-<div class="tab-item">
-  <!-- Selectors for the different tab content -->
-</div>
-<div class="tab-content-item">
-  <!-- Content of each tab item -->
-</div>
-<!-- Simply add more selectors and corresponding 
-tab content for each selector -->
-```
-
----
 ## 🛠️ 개발 환경 설정 방법
 1. **Git 설치:** [Git 공식 사이트](https://git-scm.com/)에서 Git을 다운로드하고 설치합니다.
 2. **프로젝트 클론:** 터미널(또는 Git Bash)을 열고 다음 명령어를 입력하여 프로젝트를 클론합니다.
@@ -92,5 +71,4 @@ tab content for each selector -->
 ## Acknowledgments
 scit48.duckdns.org
 port number 8888
-ID 영문이니셜 세글자
-PW 1234
+
