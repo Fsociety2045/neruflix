@@ -5,7 +5,11 @@
 -demo 페이지 배포 완 by github.io & cloudflare pages <br>
 
 ## 팀원 소개
-SCIT 48기 A반
+SCIT 48기 A반 <br>
+김상호님<br>
+서동욱님
+장지웅님
+강준석님
 
 ## 프로젝트 소개
 넷플릭스 코리아 클론코딩
