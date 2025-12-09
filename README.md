@@ -1,8 +1,6 @@
-## 과제
-### Neruflix 넷플릭스 코리아 클론코딩
- <br>
+## 프로젝트 소개
+ASMR 컨셉 NERUFLIX
 
--demo 페이지 배포 완 by github.io & cloudflare pages <br>
 
 ## 팀원 소개
 SCIT 48기 A반 <br>
@@ -11,12 +9,10 @@ SCIT 48기 A반 <br>
 장지웅님
 강준석님
 
-## 프로젝트 소개
-ASMR 기반 넷플릭스 코리아 클론코딩
 
 ### [데모 시연 페이지]
 https://neruflix.pages.dev/
-
+<br> by github.io & cloudflare pages <br>
 ## Built with:
 Languages<br>
 - HTML
@@ -37,14 +33,14 @@ Languages<br>
     ```bash
     git clone <프로젝트_레포지토리_URL>
     ```
-3. **코드 편집기 설치:** Visual Studio Code, Sublime Text 등 선호하는 코드 편집기를 설치합니다.
-4. **라이브 서버 확장 프로그램 설치 (선택 사항):** Visual Studio Code를 사용하는 경우, "Live Server" 확장 프로그램을 설치하여 실시간으로 변경 사항을 확인할 수 있습니다.
-5. **브라우저에서 파일 열기:** `home.html` 파일을 브라우저에서 열어 프로젝트를 확인합니다. 
-6. **개발 시작:** 코드 편집기에서 프로젝트 폴더를 열고 개발을 시작합니다.
+3. **코드 편집기 설치:** Visual Studio Code, Sublime Text 등 선호하는 코드 편집기를 설치
+4. **라이브 서버 확장 프로그램 설치 (선택 사항):** Visual Studio Code를 사용하는 경우, "Live Server" 확장 프로그램을 설치하여 실시간으로 변경 사항을 확인
+5. **브라우저에서 파일 열기:** `home.html` 파일을 브라우저에서 열어 프로젝트를 확인
+6. **개발 시작:** 코드 편집기에서 프로젝트 폴더를 열고 개발을 시작
 ---
 ## ✍️ Git 및 버전 관리 규칙 (필수 준수)
 
-협업 시 충돌을 방지하고 코드 리뷰를 원활하게 진행하기 위해 **모든 팀원**은 다음 규칙을 반드시 준수해 주세요.
+협업 시 충돌을 방지하고 코드 리뷰를 원활하게 진행하기 위해 **모든 팀원**은 다음 규칙을 반드시 준수해 주세요
 
 ### 1) 🚨 개인 브랜치 사용 및 Pull Request (PR) 워크플로우
 
