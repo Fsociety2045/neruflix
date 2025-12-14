@@ -1,25 +1,25 @@
-## 프로젝트 소개
+## Project Introduction
 ASMR 컨셉 NERUFLIX
 
 
-## 팀원 소개
+## Team 및 역할 소개
 SCIT 48기 A반 <br>
-김상호님<br>
-서동욱님
-장지웅님
-강준석님
+김상호님 기획,index.html,로그인,사인업, 프로필페이지, 배포 <br>
+서동욱님 Team Leading, logo 제작, 최종 merge <br>
+장지웅님 메인페이지 <br>
+강준석님 메인페이지 
 
 
-### [데모 시연 페이지]
+### [Demo Page URL]
 https://neruflix.pages.dev/
-<br> by github.io & cloudflare pages <br>
+<br> by github.io & cloudflare pages (w/ KSH3222 <br>
 ## Built with:
 Languages<br>
 - HTML
 - CSS
 - Vanilla JS - ES6
 
-## 구성 pages
+## pages
 
 - main Page (index.html)
 - Signin Page
@@ -66,9 +66,9 @@ Languages<br>
 | **`docs`** | 문서 변경 (README 등) | `docs: README.md 내용 업데이트` |
 | **`chore`** | 기타 설정, 빌드 작업 | `chore: .gitignore 파일 업데이트` |
 
-## Acknowledgments 48기 정보공유방
+## Acknowledgments 48기 정보공유방 One morething... 
 scit48.duckdns.org
 port number 8888
 Id : 영문이니셜
-PW : 대외비
+PW : 대외비(생일)
 
