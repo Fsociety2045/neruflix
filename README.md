@@ -13,27 +13,26 @@ https://neruflix.pages.dev/
 <br> by github.io & cloudflare pages <br>
 
 ## Built with:
-### Languages###L
+### Languages
 - HTML CSS 
 - JS ES6
 
-
 ### Tools
 - VS Code with Live Server
+- Git , SourceTree
 - Cloudflare (workers & pages)
-
 
 
 ## pages
 - main Page (index.html)
 - Signin Page
-- Signup Page
+- Signup Page (demo)
 - Profile Page
 - contents Page (mainindex.html)
 
 ## Git 및 버전 관리 규칙 (필수 준수)
 
-협업 시 충돌을 방지하고 코드 리뷰를 원활하게 진행하기 위해 **모든 팀원**은 다음 규칙을 반드시 준수해 주세요
+협업 시 충돌을 방지하고 코드 리뷰를 원활하게 진행하기 위해 모든 팀원은 다음 규칙을 반드시 준수해 주세요
 
 ### 1) 🚨 개인 브랜치 사용 및 Pull Request (PR) 워크플로우
 
