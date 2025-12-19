@@ -12,6 +12,10 @@ SCIT 48기 A반 <br>
 https://neruflix.pages.dev/
 <br> by github.io & cloudflare pages <br>
 
+### PT
+https://buly.kr/90cAT4I
+by KSH & chatgpt5 plus
+
 ## Built with:
 ### Languages
 - HTML CSS 
