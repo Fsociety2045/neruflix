@@ -3,8 +3,8 @@ ASMR 컨셉 NERUFLIX
 
 ## Team 및 역할 소개
 SCIT 48기 A반 <br>
-김상호님 기획,index.html,로그인, 회원가입, 프로필페이지, cloudflare 배포, 시연 <br>
-서동욱님 Team Leading, neruflix idea제시 및 logo 제작, 최종 merge <br>
+김상호님 기획,index.html,로그인, 회원가입, 프로필페이지 개발, cloudflare 배포, 시연, 발표 <br>
+서동욱님 Team Leading, neruflix idea제시 및 logo 제작, 메인페이지,최종 merge <br>
 장지웅님 메인페이지 <br>
 강준석님 메인페이지 
 
@@ -14,7 +14,7 @@ https://neruflix.pages.dev/
 
 ### PT
 https://buly.kr/90cAT4I
-by KSH & chatgpt5 plus
+by KSH & chatgpt5
 
 ## Built with:
 ### Languages
@@ -30,7 +30,7 @@ by KSH & chatgpt5 plus
 ## pages
 - main Page (index.html)
 - Signin Page
-- Signup Page (demo)
+- Signup Page 
 - Profile Page
 - contents Page (mainindex.html)
 
@@ -38,7 +38,7 @@ by KSH & chatgpt5 plus
 
 협업 시 충돌을 방지하고 코드 리뷰를 원활하게 진행하기 위해 모든 팀원은 다음 규칙을 반드시 준수해 주세요
 
-### 1) 🚨 개인 브랜치 사용 및 Pull Request (PR) 워크플로우
+### 🚨 개인 브랜치 사용 및 Pull Request (PR) 워크플로우
 
 **메인 개발은 절대 `main` 브랜치에서 직접 작업하지 않습니다.** 모든 변경 사항은 **개인 브랜치**에서 진행한 후, **Pull Request(PR)를 통해서만** `main` 브랜치에 통합합니다.
 
