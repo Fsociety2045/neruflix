@@ -12,9 +12,9 @@ SCIT 48기 A반 <br>
 https://neruflix.pages.dev/
 <br> by github.io & cloudflare pages <br>
 
-### PT
+### PPT
 https://buly.kr/90cAT4I
-by KSH & chatgpt5
+by KSH & SDW
 
 ## Built with:
 ### Languages
