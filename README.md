@@ -3,7 +3,7 @@ ASMR 컨셉 NERUFLIX
 
 ## Team 및 역할 소개
 SCIT 48기 A반 <br>
-김상호님 기획,index.html,로그인, 회원가입, 프로필페이지 개발, cloudflare 배포, 시연, 발표 <br>
+김상호님 기획,index.html,로그인, 프로필페이지 개발, cloudflare 배포, 시연, 발표 <br>
 서동욱님 Team Leading, neruflix idea제시 및 logo 제작, 메인페이지,최종 merge <br>
 장지웅님 메인페이지 <br>
 강준석님 메인페이지 
